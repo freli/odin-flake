@@ -1,0 +1,47 @@
+diff --git a/vendor/raylib/raygui.odin b/vendor/raylib/raygui.odin
+index 559437a60..b1433029c 100644
+--- a/vendor/raylib/raygui.odin
++++ b/vendor/raylib/raygui.odin
+@@ -11,7 +11,7 @@ when ODIN_OS == .Windows {
+ 	}
+ } else when ODIN_OS == .Linux  {
+ 	foreign import lib {
+-		"linux/libraygui.so" when RAYGUI_SHARED else "linux/libraygui.a",
++		"system:raygui",
+ 	}
+ } else when ODIN_OS == .Darwin {
+ 	when ODIN_ARCH == .arm64 {
+diff --git a/vendor/raylib/raylib.odin b/vendor/raylib/raylib.odin
+index 02bb6deea..0ed083c31 100644
+--- a/vendor/raylib/raylib.odin
++++ b/vendor/raylib/raylib.odin
+@@ -113,11 +113,7 @@ when ODIN_OS == .Windows {
+ 	}
+ } else when ODIN_OS == .Linux  {
+ 	foreign import lib {
+-		// Note(bumbread): I'm not sure why in `linux/` folder there are
+-		// multiple copies of raylib.so, but since these bindings are for
+-		// particular version of the library, I better specify it. Ideally,
+-		// though, it's best specified in terms of major (.so.4)
+-		"linux/libraylib.so.550" when RAYLIB_SHARED else "linux/libraylib.a",
++		"system:raylib",
+ 		"system:dl",
+ 		"system:pthread",
+ 	}
+diff --git a/vendor/raylib/rlgl/rlgl.odin b/vendor/raylib/rlgl/rlgl.odin
+index 14a7cf5b0..c40b00a2c 100644
+--- a/vendor/raylib/rlgl/rlgl.odin
++++ b/vendor/raylib/rlgl/rlgl.odin
+@@ -131,11 +131,7 @@ when ODIN_OS == .Windows {
+ 	}
+ } else when ODIN_OS == .Linux  {
+ 	foreign import lib {
+-		// Note(bumbread): I'm not sure why in `linux/` folder there are
+-		// multiple copies of raylib.so, but since these bindings are for
+-		// particular version of the library, I better specify it. Ideally,
+-		// though, it's best specified in terms of major (.so.4)
+-		"../linux/libraylib.so.550" when RAYLIB_SHARED else "../linux/libraylib.a",
++		"system:raylib",
+ 		"system:dl",
+ 		"system:pthread",
+ 	}
