@@ -16,13 +16,13 @@
 
         odin = with final; llvmPackages.stdenv.mkDerivation rec {
           pname = "odin";
-          version = "dev-2025-06";
+          version = "dev-2025-06-21:8dc374a6";
 
           src = pkgs.fetchFromGitHub {
             owner = "odin-lang";
             repo = "Odin";
-            rev = "${version}";
-            hash = "sha256-Dhy62+ccIjXUL/lK8IQ+vvGEsTrd153tPp4WIdl3rh4=";
+            rev = "8dc374a6ae43d773eba78a66d850a3733d500988";
+            hash = "sha256-5TK+gE4q9yNk0UMhne8MHB0AWvI44AOmj2F7Jx9+Yr8=";
           };
 
           LLVM_CONFIG = "${llvmPackages.llvm.dev}/bin/llvm-config";
