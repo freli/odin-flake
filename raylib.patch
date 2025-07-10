@@ -12,7 +12,7 @@ index 559437a60..b1433029c 100644
  } else when ODIN_OS == .Darwin {
  	when ODIN_ARCH == .arm64 {
 diff --git a/vendor/raylib/raylib.odin b/vendor/raylib/raylib.odin
-index 02bb6deea..0ed083c31 100644
+index bb8f0e894..98bb019b5 100644
 --- a/vendor/raylib/raylib.odin
 +++ b/vendor/raylib/raylib.odin
 @@ -113,11 +113,7 @@ when ODIN_OS == .Windows {
