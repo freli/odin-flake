@@ -16,13 +16,13 @@
 
         odin = with final; llvmPackages.stdenv.mkDerivation rec {
           pname = "odin";
-          version = "dev-2025-07";
+          version = "dev-2025-08";
 
           src = pkgs.fetchFromGitHub {
             owner = "odin-lang";
             repo = "Odin";
             rev = "${version}";
-            hash = "sha256-4jhxvQHirNm4B4Wf5Ak0lhAbwaRw6ajWA0JhIn1NYwM=";
+            hash = "sha256-08a5MFnHiG/HsetF7V913Hozev2rm1PaXdA/QJcDXTk=";
           };
 
           LLVM_CONFIG = "${llvmPackages.llvm.dev}/bin/llvm-config";
@@ -84,18 +84,18 @@
 
         ols = with final; stdenv.mkDerivation rec {
           pname = "ols";
-          version = "0-unstable-2025-07-10-407274c7";
+          version = "0-unstable-2025-08-05-b7ff730";
 
           src = pkgs.fetchFromGitHub {
             owner = "DanielGavin";
             repo = "ols";
-            rev = "407274c7a50cfbd43a22df269b9fdcb1c6d0ede9";
-            hash = "sha256-5aCipr8rDki5CsVKROEyXPMTBTsZVBjGi2L30euCib8=";
+            rev = "b7ff730cc0225297f5cd8f854972a372a27e2e28";
+            hash = "sha256-nbJuvdkQvwKiV1x/s97GpORGcYUtPXRvImZgYlNEt5E=";
           };
 
           postPatch = ''
             patchShebangs build.sh odinfmt.sh
-            sed -i 's/^version.*/version="${version}"/' build.sh
+            sed -i 's/^VERSION.*/VERSION="${version}"/' build.sh
           '';
 
           nativeBuildInputs = [ makeBinaryWrapper ];
