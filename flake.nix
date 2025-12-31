@@ -16,13 +16,13 @@
 
         odin = with final; llvmPackages.stdenv.mkDerivation rec {
           pname = "odin";
-          version = "dev-2025-09";
+          version = "dev-2025-12a";
 
           src = pkgs.fetchFromGitHub {
             owner = "odin-lang";
             repo = "Odin";
             rev = "${version}";
-            hash = "sha256-PxegNMEzxytZtmhmzDgb1Umzx/9aUIlc9SDojRlZfsE=";
+            hash = "sha256-kwjiQ7IIBRpnMtQS2zgoHlaimQCdl/3Td+L83l1fhH4=";
           };
 
           LLVM_CONFIG = "${llvmPackages.llvm.dev}/bin/llvm-config";
@@ -84,13 +84,13 @@
 
         ols = with final; stdenv.mkDerivation rec {
           pname = "ols";
-          version = "0-unstable-2025-09-17-761f556";
+          version = "0-unstable-2025-12-29-16cd61e";
 
           src = pkgs.fetchFromGitHub {
             owner = "DanielGavin";
             repo = "ols";
-            rev = "761f556b80abe30d7b2b6c1c692d584eeff91795";
-            hash = "sha256-eS5iq48f7Yw52cdr3ZvHExQZsckAS3mm5goYwey7DTw=";
+            rev = "16cd61e0f5ad5409f1747c24bdca545423892fdb";
+            hash = "sha256-D9z/LMO5bCaeH//eikqOaM8hI2TVC9D7hvoPOGf9QdY=";
           };
 
           postPatch = ''
